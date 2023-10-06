@@ -22,9 +22,9 @@ class Reverb:
     
     def distort(self,x):
         if x.ndim < 2:
-            return overlap_add.olafilt(self._impulse_response,x)
+            return overlap_add.fftfilt(self._impulse_response,x)
         else:
             output = np.zeros((x.shape[0],x.shape[1]))
             for i in range(x.shape[1]):
-                output [:,i] = overlap_add.olafilt(self._impulse_response,x[:,i])
+                output [:,i] = overlap_add.fftfilt(self._impulse_response,x[:,i])
             return output

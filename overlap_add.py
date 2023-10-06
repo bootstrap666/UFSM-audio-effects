@@ -1,6 +1,6 @@
 import numpy as np
 
-def fftfilt(h:np.ndarray, x:np.ndarray, fft_length=-1)->:np.ndarray:
+def fftfilt(h:np.ndarray, x:np.ndarray, fft_length=-1)->np.ndarray:
     """
     The classical overlap-add method for filtering a continuous stream of data
 
