@@ -20,7 +20,7 @@ class Reverb:
     def read_impulse_response(self)->np.ndarray:
         return self._impulse_response
     
-    def distort(self,x):
+    def distort(self,x)->np.ndarray:
         if x.ndim < 2:
             return overlap_add.fftfilt(self._impulse_response,x)
         else:
